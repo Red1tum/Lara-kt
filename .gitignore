@@ -1,20 +1,28 @@
-# Default gitgnore file
-# idea/build
-*.iml
 .gradle
-/local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
+local.properties
 .DS_Store
-/build
-/captures
+build/
+
 .externalNativeBuild
 .cxx
-local.properties
+
+# Android Studio captures folder
+captures
+
+# IntelliJ
+*.iml
+.idea
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/gradle.xml
+.idea/assetWizardSettings.xml
+.idea/dictionaries
+.idea/libraries
+# Android Studio 3 in .gitignore file.
+.idea/caches
+.idea/modules.xml
+# Comment next line if keeping position of elements in Navigation Editor is relevant for you
+.idea/navEditor.xml
 
 output.json
 *.apk
