@@ -13,7 +13,11 @@ import androidx.compose.runtime.SideEffect
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontWeight
 import androidx.core.view.WindowCompat
+import com.example.lara.R
 
 private val DarkColorScheme = darkColorScheme(
     primary = Purple80,
@@ -35,6 +39,12 @@ private val LightColorScheme = lightColorScheme(
     onBackground = Color(0xFF1C1B1F),
     onSurface = Color(0xFF1C1B1F),
     */
+)
+
+internal val FontFamily = FontFamily(
+    Font(R.font.sk_modernist_bold_font, weight = FontWeight.Bold),
+    Font(R.font.sk_modernist_medium_font, weight = FontWeight.Medium),
+    Font(R.font.sk_modernist_regular_font)
 )
 
 @Composable
