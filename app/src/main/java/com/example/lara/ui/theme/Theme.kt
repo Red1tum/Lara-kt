@@ -13,9 +13,13 @@ import androidx.compose.runtime.SideEffect
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
+import androidx.compose.ui.text.PlatformTextStyle
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.LineHeightStyle
+import androidx.compose.ui.unit.sp
 import androidx.core.view.WindowCompat
 import com.example.lara.R
 
@@ -41,11 +45,41 @@ private val LightColorScheme = lightColorScheme(
     */
 )
 
-internal val FontFamily = FontFamily(
+val fontFamily = FontFamily(
     Font(R.font.sk_modernist_bold_font, weight = FontWeight.Bold),
     Font(R.font.sk_modernist_medium_font, weight = FontWeight.Medium),
     Font(R.font.sk_modernist_regular_font)
 )
+
+object LaraTheme {
+    object BgColors {
+
+    }
+
+    object ButtonColors {
+
+    }
+
+    object TextColors {
+
+    }
+
+    object TextStyle {
+        val Bold_48
+            @Composable
+            get() =
+                TextStyle(
+                    fontFamily = fontFamily,
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 48.sp,
+                    platformStyle = PlatformTextStyle(includeFontPadding = false),
+                    lineHeightStyle = LineHeightStyle(
+                        LineHeightStyle.Alignment.Proportional,
+                        LineHeightStyle.Trim.None
+                    )
+                )
+    }
+}
 
 @Composable
 fun LaraTheme(
@@ -78,3 +112,4 @@ fun LaraTheme(
         content = content
     )
 }
+
