@@ -10,6 +10,7 @@ import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
@@ -48,36 +49,145 @@ private val LightColorScheme = lightColorScheme(
 val fontFamily = FontFamily(
     Font(R.font.sk_modernist_bold_font, weight = FontWeight.Bold),
     Font(R.font.sk_modernist_medium_font, weight = FontWeight.Medium),
-    Font(R.font.sk_modernist_regular_font)
+    Font(R.font.sk_modernist_regular_font),
+    Font(R.font.montserrat_medium_font, weight = FontWeight.Medium)
 )
 
 object LaraTheme {
     object BgColors {
-
+        val primary = Color(0xff050b18)
+        val star = Color(0xfff4d144)
+        val subgenres = Color(0xff44a9f4)
     }
 
     object ButtonColors {
-
+        val installColor = BgColors.star
     }
 
     object TextColors {
-
+        val light = Color(0xffeef2fb)
+        val dark = Color(0xff45454d)
+        val subgenres = Color(0xff44a9f4)
     }
 
     object TextStyle {
-        val Bold_48
+        val Bold_48_57
             @Composable
             get() =
                 TextStyle(
                     fontFamily = fontFamily,
                     fontWeight = FontWeight.Bold,
                     fontSize = 48.sp,
+                    lineHeight = 57.sp,
                     platformStyle = PlatformTextStyle(includeFontPadding = false),
                     lineHeightStyle = LineHeightStyle(
                         LineHeightStyle.Alignment.Proportional,
                         LineHeightStyle.Trim.None
                     )
                 )
+        val Bold_20
+            @Composable
+            get() =
+                TextStyle(
+                    fontFamily = fontFamily,
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 20.sp,
+                    lineHeight = 26.sp,
+                    letterSpacing = 0.5.sp,
+                    platformStyle = PlatformTextStyle(includeFontPadding = false),
+                    lineHeightStyle = LineHeightStyle(
+                        LineHeightStyle.Alignment.Proportional,
+                        LineHeightStyle.Trim.None
+                    )
+                )
+        val Bold_20_24
+            @Composable
+            get() =
+                TextStyle(
+                    fontFamily = fontFamily,
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 20.sp,
+                    lineHeight = 24.sp,
+                    letterSpacing = 0.6.sp,
+                    platformStyle = PlatformTextStyle(includeFontPadding = false),
+                    lineHeightStyle = LineHeightStyle(
+                        LineHeightStyle.Alignment.Proportional,
+                        LineHeightStyle.Trim.None
+                    )
+                )
+        val Bold_16_19
+            @Composable
+            get() =
+                TextStyle(
+                    fontFamily = fontFamily,
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 16.sp,
+                    lineHeight = 19.2.sp,
+                    letterSpacing = 0.6.sp,
+                    platformStyle = PlatformTextStyle(includeFontPadding = false),
+                    lineHeightStyle = LineHeightStyle(
+                        LineHeightStyle.Alignment.Proportional,
+                        LineHeightStyle.Trim.None
+                    )
+                )
+        val Regular_12_19
+            @Composable
+            get() =
+                TextStyle(
+                    fontFamily = fontFamily,
+                    fontWeight = FontWeight.Normal,
+                    fontSize = 12.sp,
+                    platformStyle = PlatformTextStyle(includeFontPadding = false),
+                    lineHeight = 19.sp,
+                    lineHeightStyle = LineHeightStyle(
+                        LineHeightStyle.Alignment.Proportional,
+                        LineHeightStyle.Trim.None
+                    )
+                )
+        val Regular_12_14
+            @Composable
+            get() =
+                TextStyle(
+                    fontFamily = fontFamily,
+                    fontWeight = FontWeight.Normal,
+                    fontSize = 12.sp,
+                    platformStyle = PlatformTextStyle(includeFontPadding = false),
+                    lineHeight = 14.sp,
+                    lineHeightStyle = LineHeightStyle(
+                        LineHeightStyle.Alignment.Proportional,
+                        LineHeightStyle.Trim.None
+                    )
+                )
+        val Regular_12_20
+            @Composable
+            get() =
+                TextStyle(
+                    fontFamily = fontFamily,
+                    fontWeight = FontWeight.Normal,
+                    fontSize = 12.sp,
+                    platformStyle = PlatformTextStyle(includeFontPadding = false),
+                    lineHeight = 20.sp,
+                    letterSpacing = 0.5.sp,
+                    lineHeightStyle = LineHeightStyle(
+                        LineHeightStyle.Alignment.Proportional,
+                        LineHeightStyle.Trim.None
+                    )
+                )
+        val Medium_10_12
+            @Composable
+            get() =
+                TextStyle(
+                    fontFamily = fontFamily,
+                    fontWeight = FontWeight.Normal,
+                    fontSize = 10.sp,
+                    platformStyle = PlatformTextStyle(includeFontPadding = false),
+                    lineHeight = 12.19.sp,
+                    lineHeightStyle = LineHeightStyle(
+                        LineHeightStyle.Alignment.Proportional,
+                        LineHeightStyle.Trim.None
+                    )
+                )
+
     }
 }
 
