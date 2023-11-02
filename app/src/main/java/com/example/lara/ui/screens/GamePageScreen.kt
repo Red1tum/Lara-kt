@@ -1,9 +1,11 @@
 package com.example.lara.ui.screens
 
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -58,7 +60,10 @@ fun GamePageScreen() {
             ScrollableSubgenres(listOf("MOBA", "Multiplayer", "Strategy"))
         }
         item {
-            DescriptionText(stringResource(id = R.string.dota_short_description))
+            DescriptionText(
+                stringResource(id = R.string.dota_short_description),
+                modifier = Modifier.padding(top = 9.dp)
+            )
         }
         item {
             GameplayScreenshotsRow(screenshots = listOf(

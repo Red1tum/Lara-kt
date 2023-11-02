@@ -28,7 +28,7 @@ fun GameplayScreenshotsRow(
 
     LazyRow(
         state = lazyListState,
-        modifier = modifier.padding(start = 9.dp),
+        modifier = modifier.padding(start = 24.dp),
         horizontalArrangement = Arrangement.spacedBy(15.dp)
     ) {
         items(screenshots) {item ->

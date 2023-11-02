@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -87,7 +88,7 @@ fun ReviewsColumn(
     modifier: Modifier = Modifier
 ) {
     Column(
-        verticalArrangement = Arrangement.spacedBy(50.dp),
+        verticalArrangement = Arrangement.spacedBy(25.dp),// it should be 50 but we use divider which also element so we get 100 instead of 50
         modifier = modifier
     ) {
         reviews.forEachIndexed { idx, item ->
@@ -109,7 +110,8 @@ fun ReviewsAndRatingsHeader(
     modifier: Modifier = Modifier
 ) {
     Column(
-        modifier = modifier.padding(horizontal= 24.dp)
+        modifier = modifier.padding(horizontal= 24.dp),
+        verticalArrangement = Arrangement.spacedBy(12.dp)
     ) {
         Text(
             text = stringResource(id = R.string.reviews_and_ratings),
@@ -117,7 +119,7 @@ fun ReviewsAndRatingsHeader(
             color = Color.White
         )
         Row(
-            modifier = modifier,
+            modifier = modifier.height(58.dp),
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.spacedBy(16.dp),
         ) {
@@ -127,14 +129,18 @@ fun ReviewsAndRatingsHeader(
                 color = Color.White
             )
             Column(
-                verticalArrangement = Arrangement.spacedBy(6.dp)
+                verticalArrangement = Arrangement.Center,
             ) {
-                RatingBar(rating = gameRating)
+                RatingBar(
+                    rating = gameRating,
+                    modifier = modifier.padding(bottom = 0.dp)
+                )
                 Text(
                     //TODO: add localization to reviews
                     text = "70M Reviews",
                     style = LaraTheme.TextStyle.Regular_12_14,
-                    color = Color(0xFFA8ADB7)
+                    color = Color(0xFFA8ADB7),
+                    modifier = modifier.padding(top = 8.dp)
                 )
             }
         }
@@ -148,8 +154,7 @@ fun ReviewsAndRatingSection(
 ) {
     Column(
         modifier = modifier
-            .fillMaxWidth()
-            .padding(horizontal = 24.dp),
+            .fillMaxWidth(),
         verticalArrangement = Arrangement.spacedBy(33.dp)
     ) {
         ReviewsAndRatingsHeader(gameRating = summary.rating)
