@@ -86,14 +86,11 @@ fun ReviewsColumn(
     reviews: List<Review>,
     modifier: Modifier = Modifier
 ) {
-    val lazyListState = rememberLazyListState()
-    LazyColumn(
-        state = lazyListState,
+    Column(
         verticalArrangement = Arrangement.spacedBy(50.dp),
         modifier = modifier
     ) {
-
-        itemsIndexed(reviews) {idx, item ->
+        reviews.forEachIndexed { idx, item ->
             ReviewCard(review = item)
             if (idx < reviews.size) {
                 Divider(
