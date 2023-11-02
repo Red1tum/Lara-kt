@@ -85,7 +85,7 @@ fun ReviewsColumn(
     ) {
         reviews.forEachIndexed { idx, item ->
             ReviewCard(review = item)
-            if (idx < reviews.size) {
+            if (idx < reviews.size - 1) {
                 Divider(
                     modifier = modifier
                         .border(width = 1.dp, color = LaraTheme.BgColors.divider)

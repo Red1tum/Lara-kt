@@ -12,6 +12,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.painterResource
@@ -34,6 +35,11 @@ fun Logo(
                 RoundedCornerShape(14.dp)
             )
             .border(BorderStroke(2.dp, LaraTheme.BgColors.primary))
+            .shadow(
+                elevation = 10.dp,
+                spotColor = Color.Black,
+                shape = RoundedCornerShape(12.dp)
+            )
     ) {
         Image(
             painter = painter,

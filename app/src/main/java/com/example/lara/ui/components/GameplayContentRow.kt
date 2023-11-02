@@ -57,8 +57,7 @@ fun GameplayScreenshotsRow(
                     Box(
                         modifier = Modifier
                             .align(Alignment.Center)
-                            .background(LaraTheme.BgColors.transparentGray)
-                            .clip(shape = CircleShape)
+                            .background(LaraTheme.BgColors.transparentGray, shape = CircleShape)
                             .size(48.dp)
                     ) {
                         Icon(

@@ -1,5 +1,6 @@
 package com.example.lara.ui.components
 
+import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -15,6 +16,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -35,6 +39,7 @@ fun Header(
             .height(405.dp)
             .fillMaxWidth()
     ) {
+
         Image(
             painter = painterResource(R.drawable.dota_top),
             contentDescription = "header",
@@ -44,6 +49,19 @@ fun Header(
                 .height(370.dp)
                 .fillMaxSize()
                 .clip(RoundedCornerShape(bottomEnd = 50.dp, bottomStart = 50.dp))
+        )
+        Canvas(
+            modifier = modifier
+                .height(405.dp)
+                .height(354.dp),
+            onDraw = {
+                val brush = Brush.linearGradient(
+                    listOf(Color(0xff050B18), Color(0x050B1800)),
+                    start = Offset.Zero,
+                    end = Offset.Infinite
+                )
+                drawRect(brush)
+            }
         )
 
         Row(

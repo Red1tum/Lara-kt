@@ -20,6 +20,7 @@ import com.example.lara.data.GameSummary
 import com.example.lara.data.Review
 import com.example.lara.data.Screenshot
 import com.example.lara.data.Video
+import com.example.lara.ui.components.InstallButton
 
 @Composable
 fun GamePageScreen() {
@@ -77,6 +78,9 @@ fun GamePageScreen() {
         }
         item {
             ReviewsAndRatingSection(summary = summary)
+        }
+        item {
+            InstallButton()
         }
     }
 }
