@@ -99,6 +99,7 @@ fun ReviewsColumn(
 @Composable
 fun ReviewsAndRatingsHeader(
     gameRating: Double,
+    ratingsQty: String,
     modifier: Modifier = Modifier
 ) {
     Column(
@@ -128,8 +129,7 @@ fun ReviewsAndRatingsHeader(
                     modifier = modifier.padding(bottom = 0.dp)
                 )
                 Text(
-                    //TODO: add localization to reviews
-                    text = "70M Reviews",
+                    text = "$ratingsQty ${stringResource(id = R.string.reviews)}",
                     style = LaraTheme.TextStyle.Regular_12_14,
                     color = LaraTheme.TextColors.comment,
                     modifier = modifier.padding(top = 8.dp)
@@ -149,7 +149,7 @@ fun ReviewsAndRatingSection(
             .fillMaxWidth(),
         verticalArrangement = Arrangement.spacedBy(33.dp)
     ) {
-        ReviewsAndRatingsHeader(gameRating = summary.rating)
+        ReviewsAndRatingsHeader(gameRating = summary.rating, ratingsQty = summary.ratingsQty)
         ReviewsColumn(summary.reviews)
     }
 
@@ -158,7 +158,7 @@ fun ReviewsAndRatingSection(
 @Preview
 @Composable
 fun ReviewsAndRatingsHeaderPreview() {
-    ReviewsAndRatingsHeader(gameRating = 5.0)
+    ReviewsAndRatingsHeader(gameRating = 5.0, ratingsQty = "70M")
 }
 
 @Preview
@@ -182,7 +182,7 @@ fun ReviewsAndRatingSectionPreview() {
     val summary = GameSummary(
         name = "Dota 2",
         rating = 5.0,
-        ratingsQty = 70,
+        ratingsQty = "70M",
         reviews = reviews,
         logo = painterResource(id = R.drawable.dota_logo),
         screenshots = listOf(),

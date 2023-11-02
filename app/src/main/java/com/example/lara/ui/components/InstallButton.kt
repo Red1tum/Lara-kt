@@ -11,9 +11,11 @@ import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.lara.R
 import com.example.lara.ui.theme.LaraTheme
 
 @Composable
@@ -31,7 +33,7 @@ fun InstallButton(
         onClick = { /*TODO*/ },
     ) {
         Text(
-            text = "Install",
+            text = stringResource(id = R.string.install),
             style = LaraTheme.TextStyle.Bold_20_24,
             color = LaraTheme.TextColors.black,
             textAlign = TextAlign.Center

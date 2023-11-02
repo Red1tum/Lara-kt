@@ -10,6 +10,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.lara.R
 import com.example.lara.ui.components.DescriptionText
 import com.example.lara.ui.components.GameplayScreenshotsRow
@@ -23,33 +24,11 @@ import com.example.lara.data.Video
 import com.example.lara.ui.components.InstallButton
 
 @Composable
-fun GamePageScreen() {
+fun GamePageScreen(viewModel: GameScreenViewModel = viewModel()) {
     //val context = LocalContext.current
     val lazyListState = rememberLazyListState()
 
-    val reviews = listOf(
-        Review(
-            painter = painterResource(id = R.drawable.avatar_1),
-            reviewerName = "Auguste Conte",
-            publishedAt = "February 14, 2019",
-            review = "Once you start to learn its secrets, there’s a wild and exciting variety of play here that’s unmatched, even by its peers."
-        ),
-        Review(
-            painter = painterResource(id = R.drawable.avatar_2),
-            reviewerName = "Jang Marcelino",
-            publishedAt = "February 14, 2019",
-            review = "Once you start to learn its secrets, there’s a wild and exciting variety of play here that’s unmatched, even by its peers."
-        ),
-    )
-
-    val summary = GameSummary(
-        name = "Dota 2",
-        rating = 5.0,
-        ratingsQty = 70,
-        reviews = reviews,
-        logo = painterResource(id = R.drawable.dota_logo),
-        screenshots = listOf(),
-    )
+    val summary = viewModel.getSummary()
 
     LazyColumn(
         state = lazyListState,
