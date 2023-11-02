@@ -19,6 +19,8 @@ import com.example.lara.ui.components.ReviewsAndRatingSection
 import com.example.lara.ui.components.ScrollableSubgenres
 import com.example.lara.ui.data.GameSummary
 import com.example.lara.ui.data.Review
+import com.example.lara.ui.data.Screenshot
+import com.example.lara.ui.data.Video
 
 @Composable
 fun GamePageScreen() {
@@ -67,9 +69,9 @@ fun GamePageScreen() {
         }
         item {
             GameplayScreenshotsRow(screenshots = listOf(
-                painterResource(id = R.drawable.dota_gameplay_screenshot_1),
-                painterResource(id = R.drawable.dota_gameplay_screenshot_2),
-                painterResource(id = R.drawable.dota_gameplay_screenshot_3)
+                Video(painterResource(id = R.drawable.dota_gameplay_screenshot_1)),
+                Screenshot(painterResource(id = R.drawable.dota_gameplay_screenshot_2)),
+                Screenshot(painterResource(id = R.drawable.dota_gameplay_screenshot_3))
             ))
         }
         item {

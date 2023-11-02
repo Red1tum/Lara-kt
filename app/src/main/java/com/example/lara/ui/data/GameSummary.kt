@@ -6,7 +6,7 @@ data class GameSummary(
     val name: String,
     val rating: Double,
     val logo: Painter,
-    val screenshots: List<Painter>,
+    val screenshots: List<Content>,
     val ratingsQty: Int,
     val reviews: List<Review>
 )
@@ -20,3 +20,22 @@ data class Review(
     val publishedAt: String,
     val review: String
 )
+
+// this interface needed to differentiate video from screenshot
+// so we understand when to draw play button
+interface Content {
+    val preview: Painter
+    fun isVideo(): Boolean
+}
+
+class Screenshot(override val preview: Painter) : Content {
+    override fun isVideo(): Boolean {
+        return false
+    }
+}
+
+class Video(override val preview: Painter) : Content {
+    override fun isVideo(): Boolean {
+        return false
+    }
+}
