@@ -50,18 +50,12 @@ fun Header(
                 .fillMaxSize()
                 .clip(RoundedCornerShape(bottomEnd = 50.dp, bottomStart = 50.dp))
         )
+        val brush = Brush.verticalGradient(listOf(Color.Black, Color.Transparent))
         Canvas(
-            modifier = modifier
-                .height(405.dp)
-                .height(354.dp),
-            onDraw = {
-                val brush = Brush.linearGradient(
-                    listOf(Color(0xff050B18), Color(0x050B1800)),
-                    start = Offset.Zero,
-                    end = Offset.Infinite
-                )
-                drawRect(brush)
-            }
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(100.dp),
+            onDraw ={ drawRect(brush) }
         )
 
         Row(
