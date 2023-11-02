@@ -2,6 +2,7 @@ package com.example.lara.ui.components
 
 import androidx.compose.foundation.layout.defaultMinSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -21,7 +22,8 @@ fun InstallButton(
     Button(
         modifier = modifier
             .fillMaxWidth()
-            .defaultMinSize(0.dp, 64.dp),
+            .defaultMinSize(0.dp, 64.dp)
+            .padding(horizontal = 24.dp),
         shape = RoundedCornerShape(12.dp),
         colors = ButtonDefaults.buttonColors(containerColor = LaraTheme.ButtonColors.installColor),
         onClick = { /*TODO*/ },
