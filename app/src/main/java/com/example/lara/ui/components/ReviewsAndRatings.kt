@@ -63,19 +63,19 @@ fun ReviewCard(
                     text = review.reviewerName,
                     style = LaraTheme.TextStyle.Bold_16_19,
                     fontWeight = FontWeight.Normal,
-                    color = Color.White
+                    color = LaraTheme.TextColors.primary
                 )
                 Text(
                     text = review.publishedAt,
                     style = LaraTheme.TextStyle.Regular_12_14,
-                    color = Color.White.copy(alpha = 0.4f)
+                    color = LaraTheme.TextColors.primary.copy(alpha = 0.4f)
                 )
             }
         }
         Text(
             text = review.review,
             style = LaraTheme.TextStyle.Regular_12_20,
-            color = Color(0xffa8adb7),
+            color = LaraTheme.TextColors.comment,
             modifier = modifier.padding(horizontal = 24.dp)
         )
     }
@@ -96,7 +96,7 @@ fun ReviewsColumn(
             if (idx < reviews.size) {
                 Divider(
                     modifier = modifier
-                        .border(width = 1.dp, color = Color(0xFF1A1F29))
+                        .border(width = 1.dp, color = LaraTheme.BgColors.divider)
                         .width(300.dp)
                 )
             }
@@ -116,7 +116,7 @@ fun ReviewsAndRatingsHeader(
         Text(
             text = stringResource(id = R.string.reviews_and_ratings),
             style = LaraTheme.TextStyle.Bold_16_19,
-            color = Color.White
+            color = LaraTheme.TextColors.primary
         )
         Row(
             modifier = modifier.height(58.dp),
@@ -126,7 +126,7 @@ fun ReviewsAndRatingsHeader(
             Text(
                 text = gameRating.toString(),
                 style = LaraTheme.TextStyle.Bold_48_57,
-                color = Color.White
+                color = LaraTheme.TextColors.primary
             )
             Column(
                 verticalArrangement = Arrangement.Center,
@@ -139,7 +139,7 @@ fun ReviewsAndRatingsHeader(
                     //TODO: add localization to reviews
                     text = "70M Reviews",
                     style = LaraTheme.TextStyle.Regular_12_14,
-                    color = Color(0xFFA8ADB7),
+                    color = LaraTheme.TextColors.comment,
                     modifier = modifier.padding(top = 8.dp)
                 )
             }

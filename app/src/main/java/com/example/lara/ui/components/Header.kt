@@ -60,11 +60,9 @@ fun Header(
                 verticalArrangement = Arrangement.spacedBy(4.dp)
             ) {
                 Text(
-                    text = "Dota 2",
-                    //fontSize = 8.sp,
+                    text = name,
                     style = LaraTheme.TextStyle.Bold_20,
-                    color = Color.White,
-                    //modifier = modifier.padding(bottom = 1.dp),
+                    color = LaraTheme.TextColors.primary,
                 )
                 Row()
                 {
@@ -72,7 +70,7 @@ fun Header(
                     Text(
                         text = "70M",
                         style = LaraTheme.TextStyle.Regular_12_14,
-                        color = Color(0xFF45454D),
+                        color = LaraTheme.TextColors.dark,
                         modifier = modifier.padding(start = 4.dp)
                     )
                 }

@@ -28,6 +28,7 @@ import com.example.lara.R
 import com.example.lara.ui.data.Content
 import com.example.lara.ui.data.Screenshot
 import com.example.lara.ui.data.Video
+import com.example.lara.ui.theme.LaraTheme
 
 @Composable
 fun GameplayScreenshotsRow(
@@ -55,14 +56,14 @@ fun GameplayScreenshotsRow(
                 if (!item.isVideo()) {
                     Box(modifier = Modifier
                         .align(Alignment.Center)
-                        .background(Color(0x3DFFFFFF), CircleShape)
+                        .background(LaraTheme.BgColors.transparentGray, CircleShape)
                         .clip(shape = CircleShape)
                         .size(48.dp)
                     ) {
                         Icon(
                             Icons.Rounded.PlayArrow,
                             contentDescription = "Play",
-                            tint = Color(0x3DFFFFFF),
+                            tint = LaraTheme.BgColors.transparentGray,
                             modifier = Modifier
                                 .size(30.dp)
                                 .align(alignment = Alignment.Center)

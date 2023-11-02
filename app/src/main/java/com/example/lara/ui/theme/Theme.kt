@@ -57,17 +57,23 @@ object LaraTheme {
     object BgColors {
         val primary = Color(0xff050b18)
         val star = Color(0xfff4d144)
-        val subgenres = Color(0xff44a9f4)
+        val transparentGray = Color(0x3DFFFFFF)
+        val divider = Color(0xFF1A1F29)
+        val subgenreContainer = Color(0x3D44A9F4)
     }
 
     object ButtonColors {
-        val installColor = BgColors.star
+        val installColor = Color(0xfff4d144)
     }
 
     object TextColors {
-        val light = Color(0xffeef2fb)
-        val dark = Color(0xff45454d)
+        val primary = Color.White
+        val secondary = Color(0xB2EEF2FB)
+        val dark = Color(0xFF45454D)
         val subgenres = Color(0xff44a9f4)
+        val black = Color(0xFF050B18)
+        val comment = Color(0xFFA8ADB7)
+
     }
 
     object TextStyle {

@@ -21,7 +21,7 @@ fun DescriptionText(
         text = description,
         modifier = modifier.padding(horizontal = 21.dp),
         style = LaraTheme.TextStyle.Regular_12_19,
-        color = Color(0xB2EEF2FB)
+        color = LaraTheme.TextColors.secondary
     )
 }
 
