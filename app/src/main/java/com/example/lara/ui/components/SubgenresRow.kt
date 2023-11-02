@@ -16,7 +16,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.example.lara.ui.theme.LaraTheme
 
 @Composable
@@ -43,17 +42,20 @@ fun Subgenre(name: String, modifier: Modifier = Modifier) {
     SuggestionChip(
         label = {
             Text(text = name, style = LaraTheme.TextStyle.Medium_10_12)
-                },
+        },
         modifier = modifier
             .padding(start = 4.dp, end = 4.dp)
             .border(0.dp, Color.Transparent),
         onClick = {},
         shape = RoundedCornerShape(size = 100.dp),
         colors = SuggestionChipDefaults.suggestionChipColors(
-            containerColor =  LaraTheme.BgColors.subgenreContainer,
+            containerColor = LaraTheme.BgColors.subgenreContainer,
             labelColor = LaraTheme.TextColors.subgenres
         ),
-        border = SuggestionChipDefaults.suggestionChipBorder(borderWidth = 0.dp, borderColor = Color.Transparent)
+        border = SuggestionChipDefaults.suggestionChipBorder(
+            borderWidth = 0.dp,
+            borderColor = Color.Transparent
+        )
     )
 }
 

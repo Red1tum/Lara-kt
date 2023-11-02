@@ -1,4 +1,4 @@
-package com.example.lara.ui.data
+package com.example.lara.data
 
 import androidx.compose.ui.graphics.painter.Painter
 

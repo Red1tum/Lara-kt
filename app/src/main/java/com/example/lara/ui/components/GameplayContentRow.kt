@@ -20,14 +20,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.lara.R
-import com.example.lara.ui.data.Content
-import com.example.lara.ui.data.Screenshot
-import com.example.lara.ui.data.Video
+import com.example.lara.data.Content
+import com.example.lara.data.Screenshot
+import com.example.lara.data.Video
 import com.example.lara.ui.theme.LaraTheme
 
 @Composable
@@ -43,7 +42,7 @@ fun GameplayScreenshotsRow(
         modifier = modifier.padding(start = 24.dp),
         horizontalArrangement = Arrangement.spacedBy(15.dp)
     ) {
-        items(screenshots) {item ->
+        items(screenshots) { item ->
             Box {
                 Image(
                     painter = item.preview,
@@ -54,11 +53,12 @@ fun GameplayScreenshotsRow(
                         .clip(RoundedCornerShape(14.dp))
                 )
                 if (!item.isVideo()) {
-                    Box(modifier = Modifier
-                        .align(Alignment.Center)
-                        .background(LaraTheme.BgColors.transparentGray, CircleShape)
-                        .clip(shape = CircleShape)
-                        .size(48.dp)
+                    Box(
+                        modifier = Modifier
+                            .align(Alignment.Center)
+                            .background(LaraTheme.BgColors.transparentGray, CircleShape)
+                            .clip(shape = CircleShape)
+                            .size(48.dp)
                     ) {
                         Icon(
                             Icons.Rounded.PlayArrow,

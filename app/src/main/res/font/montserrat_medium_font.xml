@@ -9,6 +9,5 @@
         app:fontStyle="normal"
         app:fontWeight="500"
         app:font="@font/montserrat_medium"
-        tools:ignore="UnusedAttribute"
-        />
+        tools:ignore="UnusedAttribute" />
 </font-family>
