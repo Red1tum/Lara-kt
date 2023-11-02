@@ -20,6 +20,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -52,18 +53,18 @@ fun GameplayScreenshotsRow(
                         .width(240.dp)
                         .clip(RoundedCornerShape(14.dp))
                 )
-                if (!item.isVideo()) {
+                if (item.isVideo()) {
                     Box(
                         modifier = Modifier
                             .align(Alignment.Center)
-                            .background(LaraTheme.BgColors.transparentGray, CircleShape)
+                            .background(LaraTheme.BgColors.transparentGray)
                             .clip(shape = CircleShape)
                             .size(48.dp)
                     ) {
                         Icon(
                             Icons.Rounded.PlayArrow,
                             contentDescription = "Play",
-                            tint = LaraTheme.BgColors.transparentGray,
+                            tint = LaraTheme.TextColors.primary,
                             modifier = Modifier
                                 .size(30.dp)
                                 .align(alignment = Alignment.Center)

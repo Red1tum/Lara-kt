@@ -36,6 +36,6 @@ class Screenshot(override val preview: Painter) : Content {
 
 class Video(override val preview: Painter) : Content {
     override fun isVideo(): Boolean {
-        return false
+        return true
     }
 }
