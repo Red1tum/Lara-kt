@@ -2,10 +2,13 @@ package com.example.lara.ui.screens
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.ViewModel
 import com.example.lara.R
 import com.example.lara.data.GameSummary
 import com.example.lara.data.Review
+import com.example.lara.data.Screenshot
+import com.example.lara.data.Video
 
 class GameScreenViewModel : ViewModel() {
     private var _summary: GameSummary? = null
@@ -37,7 +40,13 @@ class GameScreenViewModel : ViewModel() {
             ratingsQty = "70M",
             reviews = reviews,
             logo = painterResource(id = R.drawable.dota_logo),
-            screenshots = listOf(),
+            screenshots = listOf(
+                Video(painterResource(id = R.drawable.dota_gameplay_screenshot_1)),
+                Screenshot(painterResource(id = R.drawable.dota_gameplay_screenshot_2)),
+                Screenshot(painterResource(id = R.drawable.dota_gameplay_screenshot_3))
+            ),
+            subgenres = listOf("MOBA", "Multiplayer", "Strategy"),
+            shortDescription = stringResource(id = R.string.dota_short_description)
         )
 
         return _summary as GameSummary

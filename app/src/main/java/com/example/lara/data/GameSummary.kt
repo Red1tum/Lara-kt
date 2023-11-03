@@ -6,8 +6,10 @@ data class GameSummary(
     val name: String,
     val rating: Double,
     val logo: Painter,
+    val shortDescription: String,
     val screenshots: List<Content>,
     val ratingsQty: String,
+    val subgenres: List<String>,
     val reviews: List<Review>
 )
 

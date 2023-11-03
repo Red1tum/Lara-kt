@@ -35,24 +35,20 @@ fun GamePageScreen(viewModel: GameScreenViewModel = viewModel()) {
         verticalArrangement = Arrangement.spacedBy(15.dp)
     ) {
         item {
-            Header("Dota 2", 5.0)
+            Header(summary.name, summary.rating, summary.ratingsQty)
         }
         item {
-            ScrollableSubgenres(listOf("MOBA", "Multiplayer", "Strategy"))
+            ScrollableSubgenres(summary.subgenres)
         }
         item {
             DescriptionText(
-                stringResource(id = R.string.dota_short_description),
+                description = summary.shortDescription,
                 modifier = Modifier.padding(top = 9.dp)
             )
         }
         item {
             GameplayScreenshotsRow(
-                screenshots = listOf(
-                    Video(painterResource(id = R.drawable.dota_gameplay_screenshot_1)),
-                    Screenshot(painterResource(id = R.drawable.dota_gameplay_screenshot_2)),
-                    Screenshot(painterResource(id = R.drawable.dota_gameplay_screenshot_3))
-                )
+                screenshots = summary.screenshots
             )
         }
         item {

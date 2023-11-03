@@ -25,6 +25,8 @@ import androidx.compose.ui.unit.dp
 import com.example.lara.R
 import com.example.lara.data.GameSummary
 import com.example.lara.data.Review
+import com.example.lara.data.Screenshot
+import com.example.lara.data.Video
 import com.example.lara.ui.theme.LaraTheme
 
 
@@ -185,7 +187,13 @@ fun ReviewsAndRatingSectionPreview() {
         ratingsQty = "70M",
         reviews = reviews,
         logo = painterResource(id = R.drawable.dota_logo),
-        screenshots = listOf(),
+        screenshots = listOf(
+            Video(painterResource(id = R.drawable.dota_gameplay_screenshot_1)),
+            Screenshot(painterResource(id = R.drawable.dota_gameplay_screenshot_2)),
+            Screenshot(painterResource(id = R.drawable.dota_gameplay_screenshot_3))
+        ),
+        subgenres = listOf("MOBA", "Multiplayer", "Strategy"),
+        shortDescription = stringResource(id = R.string.dota_short_description)
     )
 
     ReviewsAndRatingSection(summary = summary)

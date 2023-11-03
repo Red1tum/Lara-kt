@@ -30,6 +30,7 @@ import com.example.lara.ui.theme.LaraTheme
 fun Header(
     name: String,
     rating: Double,
+    ratingsQty: String,
     modifier: Modifier = Modifier
 ) {
     Box(
@@ -79,7 +80,7 @@ fun Header(
                 {
                     RatingBar(rating = rating)
                     Text(
-                        text = "70M",
+                        text = ratingsQty,
                         style = LaraTheme.TextStyle.Regular_12_14,
                         color = LaraTheme.TextColors.dark,
                         modifier = modifier.padding(start = 4.dp)
@@ -93,5 +94,5 @@ fun Header(
 @Preview
 @Composable
 fun HeaderPreview() {
-    Header("Dota 2", 5.0)
+    Header("Dota 2", 5.0, "70M")
 }
